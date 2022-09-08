@@ -1,0 +1,27 @@
+import { useDispatch, useSelector } from "react-redux";
+import { loginWithTokenUserAsync } from "../redux/user";
+
+const useAuth = () => {
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  //try {
+    if (user) {
+      return user;
+    } //else {
+      //const token = JSON.parse(localStorage.getItem("token"));
+
+      //if (token) {
+        //dispatch(loginWithTokenUserAsync({ token }))
+          //.unwrap()
+          //.catch((error) => console.log(error));
+
+        //return [true, user];
+      //}
+   
+  } catch (error) {
+    return null;
+  }
+};
+
+export default useAuth;
